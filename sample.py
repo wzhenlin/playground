@@ -214,3 +214,8 @@ if __name__ == '__main__':
         db_cursor.execute(query, ("arkansas",))
         total_number_arkansas = db_cursor.fetchone()
         print(total_number_arkansas)
+
+
+def add_printer(printer_name):
+    for i in range(3):
+        print(printer_name)
