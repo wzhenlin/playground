@@ -19,7 +19,7 @@ def get_connection_and_cursor():
         try:
             if db_password != "":
                 db_connection = psycopg2.connect("dbname = {0} user = {1} password = {2}".format(db_name, db_user, db_password))
-                print("Success connecting to database")
+                print("Conneted to the database!")
             else:
                 # note you shouldn't use comma to seperate the argument
                 db_connection = psycopg2.connect("dbname = {0} user = {1}".format(db_name, db_user))
