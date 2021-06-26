@@ -19,7 +19,7 @@ def get_connection_and_cursor():
         try:
             if db_password != "":
                 db_connection = psycopg2.connect("dbname = {0} user = {1} password = {2}".format(db_name, db_user, db_password))
-                print("Conneted to the database!")
+                print("I am sure this is connected!")
             else:
                 # note you shouldn't use comma to seperate the argument
                 db_connection = psycopg2.connect("dbname = {0} user = {1}".format(db_name, db_user))
@@ -98,16 +98,6 @@ def insert(connection, cursor, table, data_dict, no_return = True):
 # ---------------------------------------------------------------------
 # Helper functions to prepare data to be inserted into database and to query
 # ---------------------------------------------------------------------
-
-# pass a state_fullname and return the corresponding ID in table States
-def get_state_id(state_fullname):
-   state_fullname.lower()
-   #query = """SELECT "ID" FROM "States" WHERE "Name" = '{}' """.format(state_fullname)
-   query = 'SELECT "ID" FROM "States" WHERE "Name" = %s'
-   db_cursor.execute(query, (state_fullname,))
-   result = db_cursor.fetchone()
-   return result["ID"]
-
 
 # convert each row in csv into parseable site_dictionary
 def get_site_diction(site_list, state_id):
