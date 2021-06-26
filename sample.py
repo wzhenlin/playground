@@ -216,6 +216,3 @@ if __name__ == '__main__':
         print(total_number_arkansas)
 
 
-def add_printer(printer_name):
-    for i in range(3):
-        print(printer_name)
