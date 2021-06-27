@@ -116,7 +116,7 @@ def get_site_diction(site_list, state_id):
     diction["Location"] = site_list[1]
     diction["Description"] = site_list[4]
     diction["State_ID"] = state_id
-    return diction
+    return dictionddd
 
 # query data and print
 def search(query, number_of_results = 1):
