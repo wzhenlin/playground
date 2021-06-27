@@ -99,6 +99,14 @@ def insert(connection, cursor, table, data_dict, no_return = True):
 # Helper functions to prepare data to be inserted into database and to query
 # ---------------------------------------------------------------------
 
+# pass a state_fullname and return the corresponding ID in table States
+def get_state_id(state_fullname):
+    assert(1<0)
+    print('happy!!!')
+    db_cursor.execute(query, (state_fullname,))
+    result = db_cursor.fetchone()
+    return result["ID"]
+
 # convert each row in csv into parseable site_dictionary
 def get_site_diction(site_list, state_id):
     """ site_list is a list about a particular site that contains(in order): NAME, LOCATION, TYPE, ADDRESS, DESCRIPTION"""
